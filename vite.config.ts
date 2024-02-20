@@ -4,23 +4,23 @@ export default defineConfig({
     build: {
         lib: {
             // Could also be a dictionary or array of multiple entry points
-            entry: './src/main.tsx',
-            name: 'MyLib',
+            entry: './src/Test/index.ts',
+            name: 'Dam',
             // the proper extensions will be added
-            fileName: 'my-lib',
-            formats: ['es']
+            fileName: 'dam',
+            types: 'src/index.d.ts',
+            formats: ['es', 'cjs'],
         },
         rollupOptions: {
             // make sure to externalize deps that shouldn't be bundled
             // into your library
-            external: ['react'],
+            external: ['react', 'react-dom'],
             output: {
-                // Provide global variables to use in the UMD build
-                // for externalized deps
                 globals: {
-                    react: 'React',
+                    'react': 'react',
+                    'react-dom': 'react-dom',
                 },
-            },
+            }
         },
     },
 })

@@ -1,5 +1,9 @@
-import { createRoot } from "react-dom/client";
-import Test from "./Test";
+import Test from './Test/Test';
+import  ReactDOM from 'react-dom/client';
 
-const root = createRoot(document.querySelector('#root') as HTMLElement);
-root.render(<Test />)
+
+const root = ReactDOM.createRoot(
+    document.getElementById('root') as HTMLElement
+);
+
+root.render(<Test config={{background: 'red'}} />)
